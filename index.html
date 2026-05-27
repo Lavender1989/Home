@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavendar Personal Lab</title>
+    <meta
+      name="description"
+      content="A personal homepage for projects, notes, experiments, and ways to connect."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="nav">
+        <a class="brand" href="#top">Lavendar Lab</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#projects">Projects</a>
+          <a href="#notes">Notes</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="icon-button" type="button" id="searchButton" aria-label="Focus command line">
+            <span aria-hidden="true">⌕</span>
+          </button>
+          <button class="pill-button" type="button" id="themeToggle">Light</button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="avatar" aria-hidden="true">
+            <div class="avatar-face">
+              <span>L</span>
+            </div>
+          </div>
+          <p class="eyebrow">AI Builder · Full-Stack Explorer · Product Tinkerer</p>
+          <h1 id="hero-title">Lavendar</h1>
+          <div class="meta-row">
+            <span>⌖ Shanghai / Remote</span>
+            <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="mailto:hello@example.com">hello@example.com</a>
+          </div>
+          <a class="connect" href="#contact">
+            <span></span>
+            Connect Me
+          </a>
+        </section>
+
+        <section class="terminal-wrap" aria-label="Interactive command line">
+          <div class="power-user">
+            <code>// power user?</code>
+            <span>Skip the scroll — try the mini CLI. Type <kbd>help</kbd>, <kbd>projects</kbd>, or <kbd>about</kbd>.</span>
+          </div>
+          <div class="terminal">
+            <div class="window-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <label class="terminal-line" for="commandInput">
+              <span class="prompt">$</span>
+              <input id="commandInput" autocomplete="off" spellcheck="false" value="whoami" />
+            </label>
+            <button class="run-command" type="button" id="runCommand">Run</button>
+          </div>
+          <pre class="terminal-output" id="terminalOutput">Lavendar: building useful little systems, shipping fast, learning in public.</pre>
+        </section>
+
+        <section class="split-section" id="about" aria-labelledby="about-title">
+          <h2 id="about-title">About</h2>
+          <div class="section-body">
+            <p class="lead">我喜欢把模糊的点子做成可以被点击、被使用、被迭代的东西。</p>
+            <p>
+              目前关注 AI Agent、全栈产品、自动化工作流和个人知识系统。这里会放我的项目、实验笔记、
+              demo、以及一些半成品想法。Build fast, learn faster.
+            </p>
+          </div>
+        </section>
+
+        <section class="projects-section" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <h2 id="projects-title">Projects</h2>
+            <p>精选项目和正在玩的东西。</p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-topline">
+                <span class="status-dot live"></span>
+                <span>Live</span>
+              </div>
+              <h3>Agent Workspace</h3>
+              <p>一个把任务拆解、资料检索、代码执行和结果归档串起来的个人工作台。</p>
+              <div class="tags">
+                <span>AI Agent</span>
+                <span>Next.js</span>
+                <span>Automation</span>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-topline">
+                <span class="status-dot building"></span>
+                <span>Building</span>
+              </div>
+              <h3>Memory Garden</h3>
+              <p>把阅读、聊天、项目日志整理成可搜索的长期记忆网络。</p>
+              <div class="tags">
+                <span>RAG</span>
+                <span>Notes</span>
+                <span>UX</span>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-topline">
+                <span class="status-dot idea"></span>
+                <span>Prototype</span>
+              </div>
+              <h3>Vibe Clips</h3>
+              <p>一个面向创作者的小工具，用来把素材快速拆成可发布的短内容。</p>
+              <div class="tags">
+                <span>Video</span>
+                <span>Editor</span>
+                <span>Creator Tools</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="notes-section" id="notes" aria-labelledby="notes-title">
+          <div class="section-heading">
+            <h2 id="notes-title">Notes</h2>
+            <p>一些公开学习记录。</p>
+          </div>
+          <div class="note-list">
+            <a href="#">
+              <span>Designing a small agent loop that does not get lost</span>
+              <time datetime="2026-05-27">May 2026</time>
+            </a>
+            <a href="#">
+              <span>How I organize project ideas before writing code</span>
+              <time datetime="2026-04-18">Apr 2026</time>
+            </a>
+            <a href="#">
+              <span>CLI as interface: why text input still feels powerful</span>
+              <time datetime="2026-03-09">Mar 2026</time>
+            </a>
+          </div>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+          <div>
+            <h2 id="contact-title">Contact</h2>
+            <p>有项目、合作、或者只是想交换一个奇妙想法，都可以来找我。</p>
+          </div>
+          <a class="contact-button" href="mailto:hello@example.com">Say hello</a>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
