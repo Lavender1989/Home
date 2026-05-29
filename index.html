@@ -15,6 +15,7 @@
       <header class="nav">
         <a class="brand" href="#top">Lavendar Lab</a>
         <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
           <a href="#notes">Notes</a>
           <a href="#about">About</a>
@@ -51,7 +52,7 @@
         <section class="terminal-wrap" aria-label="Interactive command line">
           <div class="power-user">
             <code>// power user?</code>
-            <span>Skip the scroll — try the mini CLI. Type <kbd>help</kbd>, <kbd>projects</kbd>, or <kbd>about</kbd>.</span>
+            <span>Skip the scroll — try the mini CLI. Type <kbd>help</kbd>, <kbd>papers</kbd>, or <kbd>projects</kbd>.</span>
           </div>
           <div class="terminal">
             <div class="window-dots" aria-hidden="true">
@@ -71,11 +72,71 @@
         <section class="split-section" id="about" aria-labelledby="about-title">
           <h2 id="about-title">About</h2>
           <div class="section-body">
-            <p class="lead">我喜欢把模糊的点子做成可以被点击、被使用、被迭代的东西。</p>
+            <p class="lead">我关注可穿戴感知、AI Agent，以及把研究想法做成可用系统。</p>
             <p>
-              目前关注 AI Agent、全栈产品、自动化工作流和个人知识系统。这里会放我的项目、实验笔记、
-              demo、以及一些半成品想法。Build fast, learn faster.
+              研究上主要探索虚拟 IMU、跨域泛化、自监督表示学习和人类活动识别；工程上喜欢做
+              AI Agent、全栈产品、自动化工作流和个人知识系统。这里会放我的论文、项目、实验笔记、
+              demo，以及一些半成品想法。Build fast, learn faster.
             </p>
+          </div>
+        </section>
+
+        <section class="publications-section" id="publications" aria-labelledby="publications-title">
+          <div class="section-heading">
+            <h2 id="publications-title">Publications</h2>
+            <p>可穿戴人类活动识别、虚拟 IMU 与自监督学习。</p>
+          </div>
+          <div class="publication-list">
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span class="paper-badge published">Published</span>
+                <span>EI & 发明专利</span>
+              </div>
+              <h3>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/11455458"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  A CVAE-Enhanced Virtual IMU Contrastive Learning for Wearable Human Activity Recognition
+                </a>
+              </h3>
+              <p>
+                提出了一种虚拟到真实域自适应框架，将条件变分自编码器（CVAE）与对比学习融合，
+                用于提升可穿戴人类活动识别中虚拟 IMU 信号的可迁移性。
+              </p>
+              <div class="tags">
+                <span>Wearable HAR</span>
+                <span>Virtual IMU</span>
+                <span>CVAE</span>
+                <span>Contrastive Learning</span>
+              </div>
+            </article>
+
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span class="paper-badge submitted">Under Review</span>
+                <span>CCF-A 投稿中</span>
+              </div>
+              <h3>
+                vSSL: Involving Virtual IMU Signals into Self-Supervised Learning Framework for
+                Wearable Human Activity
+              </h3>
+              <p>
+                面向 IMU 跨域泛化问题，提出虚实融合自监督表示学习框架，结合 Transformer 与条件变分
+                自编码器（cVAE）进行跨域特征对齐与数据增强，提升低质量虚拟数据场景下的动作识别鲁棒性。
+              </p>
+              <p class="paper-result">
+                在日常、高强度及细粒度健身动作（30 类）场景下进行 LOSO 交叉验证；高强度数据集
+                Macro-F1 达 85.89%，较主流基线提升约 14%。
+              </p>
+              <div class="tags">
+                <span>Self-Supervised Learning</span>
+                <span>Transformer</span>
+                <span>Domain Generalization</span>
+                <span>LOSO</span>
+              </div>
+            </article>
           </div>
         </section>
 

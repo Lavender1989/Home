@@ -9,12 +9,19 @@ const responses = {
   help: [
     "Available commands:",
     "  whoami     short intro",
+    "  papers     recent publications",
     "  projects   featured projects",
     "  about      what I am exploring",
     "  contact    email and links",
     "  clear      clear the output",
   ].join("\n"),
   whoami: "Lavendar: building useful little systems, shipping fast, learning in public.",
+  papers: [
+    "1. A CVAE-Enhanced Virtual IMU Contrastive Learning for Wearable Human Activity Recognition",
+    "   Published: EI & invention patent | IEEE: https://ieeexplore.ieee.org/abstract/document/11455458",
+    "2. vSSL: Involving Virtual IMU Signals into Self-Supervised Learning Framework for Wearable Human Activity",
+    "   Under review: CCF-A | Macro-F1 85.89% on high-intensity dataset",
+  ].join("\n"),
   projects: [
     "1. Agent Workspace - personal AI task console",
     "2. Memory Garden - searchable long-term notes",
