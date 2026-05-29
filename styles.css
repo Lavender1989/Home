@@ -410,6 +410,36 @@ h2 {
   gap: 18px;
 }
 
+.publication-link-card {
+  position: relative;
+  cursor: pointer;
+  transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+.publication-link-card:hover {
+  border-color: rgba(137, 215, 255, 0.55);
+  background:
+    linear-gradient(180deg, rgba(137, 215, 255, 0.09), rgba(255, 255, 255, 0.015)),
+    var(--panel);
+  transform: translateY(-2px);
+}
+
+.publication-link-card::after {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  color: var(--accent);
+  content: "Open paper";
+  font-size: 0.9rem;
+  font-weight: 800;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.publication-link-card:hover::after {
+  opacity: 1;
+}
+
 .project-card h3 {
   margin: 32px 0 12px;
   font-size: 1.45rem;
@@ -420,10 +450,6 @@ h2 {
   margin: 0;
   font-size: clamp(1.35rem, 3vw, 2rem);
   line-height: 1.22;
-}
-
-.publication-card h3 a:hover {
-  color: var(--accent);
 }
 
 .project-card p {
