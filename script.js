@@ -27,9 +27,8 @@ const responses = {
     "   Under review: CCF-A | Macro-F1 85.89% on high-intensity dataset",
   ].join("\n"),
   projects: [
-    "1. Agent Workspace - personal AI task console",
-    "2. Memory Garden - searchable long-term memory system",
-    "3. Vibe Clips - quick creator tooling prototype",
+    "1. ChatBI - multi-agent report and data analysis system | ./projects/chatbi.html",
+    "2. MiniCode - local code agent execution framework | ./projects/minicode.html",
   ].join("\n"),
   about:
     "I like turning fuzzy ideas into clickable things: agents, workflows, interfaces, and tiny tools that save time.",
@@ -38,6 +37,7 @@ const responses = {
     "Backend: FastAPI, Spring Boot",
     "AI & Agent: PyTorch, Claude Code, LLM, Transformer, Multi-Agent, RAG, Function Calling, Prompt Engineering",
     "Tools: Codex, Git, Docker, Kubernetes",
+    "Certificates: CET-6, 人工智能四级",
   ].join("\n"),
   contact: "WeChat: Wander_quiet_reverie\nEmail: wqr20011989@163.com",
 };

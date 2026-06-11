@@ -150,48 +150,52 @@
         <section class="projects-section" id="projects" aria-labelledby="projects-title">
           <div class="section-heading">
             <h2 id="projects-title">Projects</h2>
-            <p>精选项目和正在玩的东西。</p>
+            <p>我的项目经历。</p>
           </div>
           <div class="project-grid">
-            <article class="project-card">
+            <a class="project-card project-link-card featured-project" href="./projects/chatbi.html">
               <div class="project-topline">
                 <span class="status-dot live"></span>
-                <span>Live</span>
+                <span>Internship Project</span>
               </div>
-              <h3>Agent Workspace</h3>
-              <p>一个把任务拆解、资料检索、代码执行和结果归档串起来的个人工作台。</p>
+              <h3>ChatBI 智能报表与多 Agent 分析系统</h3>
+              <p>
+                面向 BioFord 组内数据分析场景，参与设计 Orchestrator-BaseAgent 编排架构，
+                串联 Planner、SQLGen、Judge、Execute、Visualize、Report 等 Agent，
+                支持自然语言到 SQL、图表分析和多方向 Markdown 报告生成。
+              </p>
+              <p class="project-highlight">
+                构建 500+ Text2SQL/Chart benchmark；runtime schema pruning 在仅保留约
+                11.63% 字段上下文时达到 93.92% SQL 执行成功率。
+              </p>
               <div class="tags">
-                <span>AI Agent</span>
-                <span>Next.js</span>
-                <span>Automation</span>
+                <span>Multi-Agent</span>
+                <span>Text2SQL</span>
+                <span>SchemaGraph</span>
+                <span>Evaluation</span>
               </div>
-            </article>
-            <article class="project-card">
+            </a>
+            <a class="project-card project-link-card featured-project" href="./projects/minicode.html">
               <div class="project-topline">
                 <span class="status-dot building"></span>
-                <span>Building</span>
+                <span>Personal Project</span>
               </div>
-              <h3>Memory Garden</h3>
-              <p>把阅读、聊天、项目日志整理成可搜索的长期记忆网络。</p>
+              <h3>MiniCode 本地代码智能体执行框架</h3>
+              <p>
+                面向代码仓库长链路开发任务，设计并实现本地代码 Agent 执行框架，覆盖模型接入、
+                工具调用、上下文治理、结构化记忆、运行审计与评测闭环。
+              </p>
+              <p class="project-highlight">
+                在 12 组长上下文配置上平均压缩 prompt 18.01%；在 12 个记忆依赖任务中将正确率从
+                66.7% 提升至 100%。
+              </p>
               <div class="tags">
-                <span>RAG</span>
-                <span>Knowledge Base</span>
-                <span>UX</span>
+                <span>Python</span>
+                <span>Agent Harness</span>
+                <span>Tool Calling</span>
+                <span>Memory Retrieval</span>
               </div>
-            </article>
-            <article class="project-card">
-              <div class="project-topline">
-                <span class="status-dot idea"></span>
-                <span>Prototype</span>
-              </div>
-              <h3>Vibe Clips</h3>
-              <p>一个面向创作者的小工具，用来把素材快速拆成可发布的短内容。</p>
-              <div class="tags">
-                <span>Video</span>
-                <span>Editor</span>
-                <span>Creator Tools</span>
-              </div>
-            </article>
+            </a>
           </div>
         </section>
 
@@ -238,10 +242,28 @@
 
         <section class="education-section" id="education" aria-labelledby="education-title">
           <h2 id="education-title">Education</h2>
-          <div class="resume-card">
-            <h3>西安电子科技大学</h3>
-            <p>工学硕士 - 计算机技术</p>
-            <p>2024 年 9 月 - 2027 年 6 月</p>
+          <div class="resume-card education-card">
+            <div class="education-schools">
+              <article class="education-item">
+                <h3>西安电子科技大学</h3>
+                <p>工学硕士 - 计算机技术</p>
+                <p>2024 年 9 月 - 2027 年 6 月</p>
+              </article>
+              <article class="education-item">
+                <h3>上海海事大学</h3>
+                <p>工学学士 - 人工智能</p>
+                <p>2020 年 9 月 - 2024 年 6 月</p>
+              </article>
+            </div>
+            <div class="education-awards">
+              <h3>Awards</h3>
+              <ul>
+                <li>西安电子科技大学：特等奖 / 一等奖学金</li>
+                <li>上海海事大学：特等奖 / 一等奖学金</li>
+                <li>上海海事大学：中国船级社奖学金</li>
+                <li>上海海事大学：优秀学生</li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -283,6 +305,13 @@
                 <span>Git</span>
                 <span>Docker</span>
                 <span>Kubernetes</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <h3>Certificates</h3>
+              <div class="skill-tags">
+                <span>CET-6</span>
+                <span>人工智能四级</span>
               </div>
             </div>
           </div>

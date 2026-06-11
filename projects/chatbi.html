@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatBI 智能报表与多 Agent 分析系统 · Lavendar Lab</title>
+    <meta
+      name="description"
+      content="ChatBI internship project case study: multi-agent orchestration, Text2SQL, schema pruning, chart generation, and evaluation."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project-page">
+    <div class="site-shell">
+      <header class="nav">
+        <a class="brand" href="../index.html#top">Lavendar Lab</a>
+        <nav class="nav-links" aria-label="Project navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="project-hero" aria-labelledby="project-title">
+          <a class="back-link" href="../index.html#projects">Back to Projects</a>
+          <p class="eyebrow">Internship Project · BioFord ChatBI</p>
+          <h1 id="project-title">ChatBI 智能报表与多 Agent 分析系统</h1>
+          <p class="project-summary">
+            这是我在深圳津渡生物科技有限公司实习期间参与的核心项目：把自然语言问题转化为可执行的数据分析流程，
+            通过多 Agent 编排完成选表、SQL 生成、结构校验、执行反馈、图表生成和 Markdown 报告输出。
+          </p>
+          <div class="project-actions" aria-label="Project documents">
+            <a
+              class="doc-link"
+              href="https://my.feishu.cn/wiki/WQjYw6fUaiK0NXkvxMFcCROznge?from=from_copylink"
+              target="_blank"
+              rel="noreferrer"
+            >
+              项目介绍文档
+            </a>
+            <a
+              class="doc-link"
+              href="https://my.feishu.cn/wiki/N6EowMIXEiJ3clkUds8cGv7XnFd?from=from_copylink"
+              target="_blank"
+              rel="noreferrer"
+            >
+              项目评测文档
+            </a>
+          </div>
+          <div class="tags">
+            <span>Multi-Agent</span>
+            <span>Text2SQL</span>
+            <span>SchemaGraph</span>
+            <span>Vector Retrieval</span>
+            <span>Benchmark</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="overview-title">
+          <h2 id="overview-title">Overview</h2>
+          <div class="case-body">
+            <p>
+              项目面向组内生物医药业务数据分析场景，希望让使用者通过自然语言提出分析需求，系统自动完成数据查询、
+              可视化和报告生成。与单次 Text2SQL 不同，ChatBI 更像一个可追踪的分析流水线：每一步 Agent 都有清晰职责，
+              并通过事件回传、日志追踪和重试机制保证过程可解释、可诊断。
+            </p>
+            <div class="metric-grid">
+              <div class="metric-card">
+                <strong>24</strong>
+                <span>业务表本地 SQLite 可复现评测环境</span>
+              </div>
+              <div class="metric-card">
+                <strong>500+</strong>
+                <span>Text2SQL / Chart benchmark 样例</span>
+              </div>
+              <div class="metric-card">
+                <strong>93.92%</strong>
+                <span>runtime schema pruning SQL 执行成功率</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="architecture-title">
+          <h2 id="architecture-title">Architecture</h2>
+          <div class="case-body">
+            <p>
+              系统采用 Orchestrator-BaseAgent 编排架构，由 Orchestrator 统一管理任务状态、上下文传递、
+              Agent 生命周期和事件输出，各 Agent 专注完成单一阶段。
+            </p>
+            <ol class="flow-list">
+              <li><strong>Planner</strong> 拆解用户意图，确定查询和分析计划。</li>
+              <li><strong>SQLGen</strong> 基于裁剪后的 schema 子图生成 SQL。</li>
+              <li><strong>Judge</strong> 对 SQL 结构、语义和结果风险进行评审。</li>
+              <li><strong>Execute</strong> 执行查询，并把错误或结果反馈给上游 Agent。</li>
+              <li><strong>Visualize / Report</strong> 生成图表配置和多方向 Markdown 报告。</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="contribution-title">
+          <h2 id="contribution-title">My Work</h2>
+          <div class="case-body">
+            <ul class="case-list">
+              <li>
+                参与后端研发，拆分 Planner、SQLGen、Judge、Execute、Visualize、Report 等 Agent，
+                统一 Agent 生命周期、日志追踪与事件回传。
+              </li>
+              <li>
+                构建 SchemaGraph 缓存、向量检索选表与动态子图裁剪机制，降低大 schema 场景下的上下文噪声。
+              </li>
+              <li>
+                设计“SQL 生成 - 结构校验 - Judge 评审 - 执行反馈 - 有界重试”闭环，并通过 CTE 物化中间结果支撑多步分析。
+              </li>
+              <li>
+                搭建本地 SQLite 可复现评测环境与 500+ benchmark，设计 no / full / runtime / gold graph 对比实验。
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="evaluation-title">
+          <h2 id="evaluation-title">Evaluation</h2>
+          <div class="case-body">
+            <p>
+              在评测中，runtime schema pruning 只保留约 11.63% 相关字段上下文，达到 93.92% SQL 执行成功率与
+              61.11% 结果正确率。接入完整 Agent 链路与 Judge / Retry 后，端到端结果正确率约 66%。
+            </p>
+            <p>
+              这个结果说明，针对业务库的 schema 裁剪和 Agent 反馈闭环，比单纯把完整 schema 塞进模型上下文更适合
+              可复现、可诊断的企业数据分析系统。
+            </p>
+          </div>
+        </section>
+
+        <footer class="project-footer">
+          <p>
+            当前页面是根据已有主页内容整理的展示版。完整背景、实验表格和评测细节可继续沉淀到本页，也可以保留在
+            <a
+              class="text-link"
+              href="https://my.feishu.cn/wiki/WQjYw6fUaiK0NXkvxMFcCROznge?from=from_copylink"
+              target="_blank"
+              rel="noreferrer"
+            >
+              飞书项目介绍
+            </a>
+            与
+            <a
+              class="text-link"
+              href="https://my.feishu.cn/wiki/N6EowMIXEiJ3clkUds8cGv7XnFd?from=from_copylink"
+              target="_blank"
+              rel="noreferrer"
+            >
+              飞书项目评测
+            </a>
+            作为原始材料。
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
