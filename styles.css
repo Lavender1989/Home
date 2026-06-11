@@ -456,7 +456,9 @@ h2 {
   font-size: 0.9rem;
   font-weight: 800;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 180ms ease;
+  z-index: 1;
 }
 
 .project-link-card:hover::after {
